@@ -88,11 +88,11 @@ const Home = () => {
           </p>
           
           <div className="mt-10 max-w-4xl mx-auto">
-            <div className="bg-white rounded-lg shadow-xl overflow-hidden">
+            <div className="bg-white/70 backdrop-blur-sm rounded-lg shadow-xl overflow-hidden border-2 border-gray-200">
               <form onSubmit={handleSearch} className="p-6">
                 <div className="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
                   <div className="sm:col-span-3">
-                    <label htmlFor="fromLocation" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="fromLocation" className="block text-sm font-medium text-gray-800 mb-1">
                       From
                     </label>
                     <div className="mt-1">
@@ -102,14 +102,14 @@ const Home = () => {
                         id="fromLocation"
                         value={searchFilters.fromLocation}
                         onChange={handleInputChange}
-                        className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                        className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-2 border-gray-300 rounded-md bg-white p-3"
                         placeholder="Departure City"
                       />
                     </div>
                   </div>
                   
                   <div className="sm:col-span-3">
-                    <label htmlFor="toLocation" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="toLocation" className="block text-sm font-medium text-gray-800 mb-1">
                       To
                     </label>
                     <div className="mt-1">
@@ -119,14 +119,14 @@ const Home = () => {
                         id="toLocation"
                         value={searchFilters.toLocation}
                         onChange={handleInputChange}
-                        className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                        className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-2 border-gray-300 rounded-md bg-white p-3"
                         placeholder="Destination City"
                       />
                     </div>
                   </div>
                   
                   <div className="sm:col-span-3">
-                    <label htmlFor="startDate" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="startDate" className="block text-sm font-medium text-gray-800 mb-1">
                       Start Date
                     </label>
                     <div className="mt-1">
@@ -134,7 +134,7 @@ const Home = () => {
                         id="startDate"
                         selected={searchFilters.startDate}
                         onChange={(date) => handleDateChange(date, 'startDate')}
-                        className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                        className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-2 border-gray-300 rounded-md bg-white p-3"
                         placeholderText="Select Start Date"
                         dateFormat="yyyy-MM-dd"
                       />
@@ -142,7 +142,7 @@ const Home = () => {
                   </div>
                   
                   <div className="sm:col-span-3">
-                    <label htmlFor="endDate" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="endDate" className="block text-sm font-medium text-gray-800 mb-1">
                       End Date
                     </label>
                     <div className="mt-1">
@@ -150,7 +150,7 @@ const Home = () => {
                         id="endDate"
                         selected={searchFilters.endDate}
                         onChange={(date) => handleDateChange(date, 'endDate')}
-                        className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                        className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-2 border-gray-300 rounded-md bg-white p-3"
                         placeholderText="Select End Date"
                         dateFormat="yyyy-MM-dd"
                         minDate={searchFilters.startDate}

@@ -236,7 +236,7 @@ const PackageForm = () => {
                         type="text"
                         name="fromLocation"
                         id="fromLocation"
-                        className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                        className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-2 border-gray-300 rounded-md bg-white p-2"
                       />
                       <ErrorMessage
                         name="fromLocation"
@@ -255,7 +255,7 @@ const PackageForm = () => {
                         type="text"
                         name="toLocation"
                         id="toLocation"
-                        className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                        className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-2 border-gray-300 rounded-md bg-white p-2"
                         onChange={(e) => {
                           setFieldValue('toLocation', e.target.value);
                           if (!e.target.value) {
@@ -279,7 +279,7 @@ const PackageForm = () => {
                       <DatePicker
                         selected={values.startDate}
                         onChange={(date) => setFieldValue('startDate', date)}
-                        className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                        className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-2 border-gray-300 rounded-md bg-white p-2"
                         dateFormat="yyyy-MM-dd"
                       />
                       <ErrorMessage
@@ -298,7 +298,7 @@ const PackageForm = () => {
                       <DatePicker
                         selected={values.endDate}
                         onChange={(date) => setFieldValue('endDate', date)}
-                        className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                        className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-2 border-gray-300 rounded-md bg-white p-2"
                         dateFormat="yyyy-MM-dd"
                         minDate={values.startDate}
                       />
@@ -314,7 +314,7 @@ const PackageForm = () => {
                     <label htmlFor="basePrice" className="block text-sm font-medium text-gray-700">
                       Base Price
                     </label>
-                    <div className="mt-1 relative rounded-md shadow-sm">
+                    <div className="mt-1 relative rounded-md shadow-sm border-2 border-gray-300 bg-white">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <span className="text-gray-500 sm:text-sm">₹</span>
                       </div>
@@ -322,7 +322,7 @@ const PackageForm = () => {
                         type="number"
                         name="basePrice"
                         id="basePrice"
-                        className="focus:ring-primary-500 focus:border-primary-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
+                        className="focus:ring-primary-500 focus:border-primary-500 block w-full pl-7 pr-12 sm:text-sm border-0 bg-transparent p-2"
                         placeholder="0.00"
                         step="0.01"
                         min="0"
@@ -342,7 +342,7 @@ const PackageForm = () => {
                     <label htmlFor="foodPrice" className="block text-sm font-medium text-gray-700">
                       Food Price
                     </label>
-                    <div className="mt-1 relative rounded-md shadow-sm">
+                    <div className="mt-1 relative rounded-md shadow-sm border-2 border-gray-300 bg-white">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <span className="text-gray-500 sm:text-sm">₹</span>
                       </div>
@@ -350,7 +350,7 @@ const PackageForm = () => {
                         type="number"
                         name="foodPrice"
                         id="foodPrice"
-                        className="focus:ring-primary-500 focus:border-primary-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
+                        className="focus:ring-primary-500 focus:border-primary-500 block w-full pl-7 pr-12 sm:text-sm border-0 bg-transparent p-2"
                         placeholder="0.00"
                         step="0.01"
                         min="0"
@@ -371,7 +371,7 @@ const PackageForm = () => {
                     <label htmlFor="accommodationPrice" className="block text-sm font-medium text-gray-700">
                       Accommodation Price
                     </label>
-                    <div className="mt-1 relative rounded-md shadow-sm">
+                    <div className="mt-1 relative rounded-md shadow-sm border-2 border-gray-300 bg-white">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <span className="text-gray-500 sm:text-sm">₹</span>
                       </div>
@@ -379,7 +379,7 @@ const PackageForm = () => {
                         type="number"
                         name="accommodationPrice"
                         id="accommodationPrice"
-                        className="focus:ring-primary-500 focus:border-primary-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
+                        className="focus:ring-primary-500 focus:border-primary-500 block w-full pl-7 pr-12 sm:text-sm border-0 bg-transparent p-2"
                         placeholder="0.00"
                         step="0.01"
                         min="0"
