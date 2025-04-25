@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../services/api';
 import { useGoogleLogin } from '@react-oauth/google';
 import {jwtDecode} from 'jwt-decode';
 
@@ -18,7 +18,7 @@ const AuthProvider = ({ children }) => {
       if (token) {
         setAuthToken(token);
         try {
-          const res = await axios.get('/api/auth/me');
+          const res = await api.get('/api/auth/me');
           setCurrentUser(res.data.data);
           setIsAuthenticated(true);
         } catch (err) {
@@ -36,9 +36,9 @@ const AuthProvider = ({ children }) => {
 
   const setAuthToken = (token) => {
     if (token) {
-      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
     } else {
-      delete axios.defaults.headers.common['Authorization'];
+      delete api.defaults.headers.common['Authorization'];
     }
   };
 
@@ -47,7 +47,7 @@ const AuthProvider = ({ children }) => {
       setLoading(true);
       setError(null);
       
-      const res = await axios.post('/api/auth/register', formData);
+      const res = await api.post('/api/auth/register', formData);
       
       localStorage.setItem('token', res.data.token);
       setAuthToken(res.data.token);
@@ -68,7 +68,7 @@ const AuthProvider = ({ children }) => {
       setLoading(true);
       setError(null);
       
-      const res = await axios.post('/api/auth/login', formData);
+      const res = await api.post('/api/auth/login', formData);
       
       localStorage.setItem('token', res.data.token);
       setAuthToken(res.data.token);
@@ -92,7 +92,7 @@ const AuthProvider = ({ children }) => {
       if (credentialResponse.credential) {
         const userInfo = jwtDecode(credentialResponse.credential);
         
-        const res = await axios.post('/api/auth/google', { 
+        const res = await api.post('/api/auth/google', { 
           idToken: credentialResponse.credential,
           userInfo: userInfo 
         });
@@ -105,7 +105,7 @@ const AuthProvider = ({ children }) => {
         return res.data;
       } 
       else {
-        const res = await axios.post('/api/auth/google', { 
+        const res = await api.post('/api/auth/google', { 
           accessToken: credentialResponse.access_token 
         });
         
@@ -138,7 +138,7 @@ const AuthProvider = ({ children }) => {
       
       const { profilePicture, ...profileData } = formData;
       
-      const res = await axios.put('/api/users/profile', profileData);
+      const res = await api.put('/api/users/profile', profileData);
       
       setCurrentUser(res.data.data);
       
