@@ -14,10 +14,13 @@ const userRoutes = require('./routes/userRoutes');
 const app = express();
 
 app.use(express.json());
+
+const allowedOrigins = process.env.NODE_ENV === 'production' 
+    ? (process.env.FRONTEND_URL ? [process.env.FRONTEND_URL] : ['*']) 
+    : 'http://localhost:3000';
+
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? [process.env.FRONTEND_URL] 
-    : 'http://localhost:3000',
+  origin: allowedOrigins,
   credentials: true
 }));
 
