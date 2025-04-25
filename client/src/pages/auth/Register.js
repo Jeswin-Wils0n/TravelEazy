@@ -11,6 +11,8 @@ const Register = () => {
   const { register, googleLogin } = useContext(AuthContext);
   const [registerError, setRegisterError] = useState('');
   const navigate = useNavigate();
+  const [loginError, setLoginError] = useState('');
+  const redirectPath = '/';
 
   const validationSchema = Yup.object({
     name: Yup.string()
