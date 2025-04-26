@@ -511,7 +511,7 @@ const PackageForm = () => {
                       </div>
                     </div>
                     <p className="mt-2 text-sm text-gray-500">
-                      This image will automatically be used for your package. You can add additional images below.
+                      This image will automatically be used for your package.
                     </p>
                   </div>
                   

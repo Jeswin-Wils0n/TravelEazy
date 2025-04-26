@@ -52,11 +52,11 @@ const Home = () => {
     const queryParams = new URLSearchParams();
     
     if (searchFilters.fromLocation) {
-      queryParams.append('fromLocation', searchFilters.fromLocation);
+      queryParams.append('fromLocation', searchFilters.fromLocation.trim());
     }
     
     if (searchFilters.toLocation) {
-      queryParams.append('toLocation', searchFilters.toLocation);
+      queryParams.append('toLocation', searchFilters.toLocation.trim());
     }
     
     if (searchFilters.startDate) {
